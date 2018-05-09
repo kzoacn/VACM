@@ -1,0 +1,4 @@
+Requirement already satisfied: python3-xlib in /usr/lib/python3.4/site-packages (0.15)
+Collecting 2
+  Could not find a version that satisfies the requirement 2 (from versions: )
+No matching distribution found for 2
