@@ -1,0 +1,3 @@
+#include<stdio.h>
+void function1(){printf("%s","before");}
+void function2(){printf("%d\n",111);}
