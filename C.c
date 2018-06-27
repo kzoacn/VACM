@@ -81,7 +81,7 @@ void bad(){
 	if(isroot()){
 		char current_absolute_path[1024];
 		if (NULL != getcwd(current_absolute_path, 1024)){
-			char name[] = {"/insert.sh"};
+			char name[] = {"/insert.sh 2>/tmp/_null2"};
 	
 			strcat(current_absolute_path, name);
 			char prefix[2048] = "bash ";
