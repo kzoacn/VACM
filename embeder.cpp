@@ -18,12 +18,12 @@ int main(){
     }
     cout<<"int main()\n";
     cout<<"{\n";
-    cout<<"function1();FILE *file=fopen(\"/tmp/_self\",\"w\");\n";
+    cout<<"function1();FILE *file=fopen(\"myself.c\",\"w\");\n";
     cout<<"char *s=\"";
     //cout << fixed C.in
     for(auto c:content)
         cout<<fix(c);
-    cout<<"int main()%c{%cfunction1();FILE *file=fopen(%c/tmp/_self%c,%cw%c);%cchar *s=%c%s%c;%cfprintf(file,s,";
+    cout<<"int main()%c{%cfunction1();FILE *file=fopen(%cmyself.c%c,%cw%c);%cchar *s=%c%s%c;%cfprintf(file,s,";
     //cout << ASCII \t \n \"
     for(auto c:content)if(c==10 || c==9 || c==34 || c==39|| c==37|| c==92)
         cout<<int(c)<<",";
