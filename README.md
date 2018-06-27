@@ -79,7 +79,7 @@
 
 #### 展示Quine与Quine嵌入器
 
-`g++ embeder.cpp -o embeder`
+`g++ embeder.cpp -o embeder -std=c++11`
 
 `./embeder <embed.c >quine.c`
 
